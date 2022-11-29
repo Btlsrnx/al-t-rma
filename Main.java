@@ -1,23 +1,36 @@
 public class Main {
+    static boolean isFind(int[] arr,int value){
+        for ( int  i : arr ){
+            if (i==value){
+                return true;
+            }
+        }
+        return  false ;
+    }
     public static void main(String[] args){
-        String [][] letter=new String[6][4];
+        int[] list={4,7,4,4,2,9,10,2,1,3,4,8,3,1};
+        int[] dublicate=new int[list.length];
+        int startIndex=0;
+        for (int i=0;i< list.length;i++){
 
-        for (int i=0;i< letter.length;i++){
-            for (int j=0;j<letter[i].length;j++){
-                if (i==0||i==2||i==5){
-                    letter [i][j]=" * ";
-                }else if(j==0||j==3){
-                    letter [i][j]=" * ";
-                }else{
-                    letter [i][j]="   ";
+            for (int j=0;j< list.length;j++){
+                if ((i!=j)&&(list[i]==list[j])){
+                    if (!isFind(dublicate,list[i])){
+                        dublicate[startIndex++]=list[i];
+                    }
+                    break;
                 }
             }
         }
-        for (String[]row:letter){
-            for (String col:row){
-                System.out.print(col);
+
+        System.out.println("\nTekrar eden numara çift numara ");
+        for ( int  value :dublicate ) {
+            if ((value!=0)&&(value%2==0)){
+                System.out.println(value);
             }
-            System.out.println();
         }
-    }
-}
+
+
+            }
+        }
+
