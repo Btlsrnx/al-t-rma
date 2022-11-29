@@ -1,11 +1,29 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class txt {
     public static void main(String[] args) {
-        int[] numbers={1,2,3,4,5};
-        int sum=0;
-        for(int i : numbers) {
-            sum += (1.0 / i );
+        Scanner scan = new Scanner(System.in);
+        int input = scan.nextInt();
+        int[] numbers = {5, 6, 9, 78};
+        Arrays.sort(numbers);
+        int min = numbers[0];
+        int max = numbers[0];
+        System.out.println(Arrays.toString(numbers));
+        for (int i : numbers) {
+            if (input>i)
+                min = i ;
+            else if (input==i){}
+            else {
+                max = i;
+                break;
+            }
         }
-        double harmonicAverage = numbers.length / sum;
-        System.out.println("Harmonik Ortalama = " + harmonicAverage);
-    }
+        System.out.println("EN YAKIN SAYI MİNİMUMA :"+min);
+        System.out.println("EN YAKIN SAYI MAKSİMUMA:"+max);
+
+          }
 }
+
+
