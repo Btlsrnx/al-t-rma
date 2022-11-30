@@ -1,36 +1,23 @@
+import java.util.Scanner;
+import java.util.Arrays;
 public class Main {
-    static boolean isFind(int[] arr,int value){
-        for ( int  i : arr ){
-            if (i==value){
-                return true;
-            }
-        }
-        return  false ;
-    }
     public static void main(String[] args){
-        int[] list={4,7,4,4,2,9,10,2,1,3,4,8,3,1};
-        int[] dublicate=new int[list.length];
-        int startIndex=0;
-        for (int i=0;i< list.length;i++){
-
-            for (int j=0;j< list.length;j++){
-                if ((i!=j)&&(list[i]==list[j])){
-                    if (!isFind(dublicate,list[i])){
-                        dublicate[startIndex++]=list[i];
-                    }
-                    break;
-                }
-            }
+        int n;
+        Scanner input=new Scanner(System.in);
+        System.out.print("DİZİNİN ELEMAN SAYISINI GİRİNİZ:");
+        n=input.nextInt();
+        int btl=1;
+        int[] number=new int[n];
+        for (int i=0;i<number.length;i++){
+            System.out.print((i + 1) + ". Elemanı : ");
+            number[i] = input.nextInt();
         }
+        Arrays.sort(number);
 
-        System.out.println("\nTekrar eden numara çift numara ");
-        for ( int  value :dublicate ) {
-            if ((value!=0)&&(value%2==0)){
-                System.out.println(value);
-            }
-        }
+        System.out.print("Sıralama : " );
+        for(int i : number) {
+            System.out.print(i + " ");
+    }
 
-
-            }
-        }
-
+}
+}
