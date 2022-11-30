@@ -1,23 +1,16 @@
-import java.util.Scanner;
-import java.util.Arrays;
 public class Main {
-    public static void main(String[] args){
-        int n;
-        Scanner input=new Scanner(System.in);
-        System.out.print("DİZİNİN ELEMAN SAYISINI GİRİNİZ:");
-        n=input.nextInt();
-        int btl=1;
-        int[] number=new int[n];
-        for (int i=0;i<number.length;i++){
-            System.out.print((i + 1) + ". Elemanı : ");
-            number[i] = input.nextInt();
+    public static void main(String[] args) {
+        int[][] matris= {{5,3,3},{6,5,2},{}};
+        int[][] transpoz=new int[3][2];
+
+
+        for (int i=0;i< 3;i++){
+            for (int j=0;j<2;j++){
+                transpoz[i][j]=matris[j][i];
+                System.out.print(" "+transpoz[i][j]);
+            }
+            System.out.println();
         }
-        Arrays.sort(number);
 
-        System.out.print("Sıralama : " );
-        for(int i : number) {
-            System.out.print(i + " ");
     }
-
-}
 }
